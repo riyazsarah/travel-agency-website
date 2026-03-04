@@ -49,7 +49,7 @@ export default function WhyUs() {
   return (
     <section className={styles.section} id="about">
       <div className={styles.container}>
-        <SectionHeader label="Why Booketto" title="Built Different" />
+        <SectionHeader label="Why Pan Asia" title="Built Different" />
         <div className={styles.grid}>
           {whyUsFeatures.map((feature, index) => (
             <ScrollReveal key={feature.id} delay={index * 0.04}>

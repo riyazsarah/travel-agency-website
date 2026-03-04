@@ -15,7 +15,7 @@ const HERO_VIDEOS = [
 ];
 
 const HERO_BG =
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&auto=format&fit=crop&q=80';
+  'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&auto=format&fit=crop&q=80';
 
 const HEADLINE_LINE1 = ['Journey', 'Beyond'];
 const HEADLINE_LINE2 = ['the', 'Ordinary'];
@@ -92,7 +92,7 @@ export default function Hero() {
       {/* Video background with crossfade */}
       <div ref={bgRef} className={styles.bg}>
         {/* Fallback image for slow connections */}
-        <img src={HERO_BG} alt="Dubai skyline with Burj Khalifa at sunset" className={styles.bgImg} />
+        <img src={HERO_BG} alt="Scenic travel destination" className={styles.bgImg} />
 
         {/* Video layers */}
         {HERO_VIDEOS.map((src, i) => (
@@ -136,7 +136,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Trusted DMC Since 2021
+          Trusted Travel Partner • IATA Certified
         </motion.span>
 
         <motion.h1
@@ -176,8 +176,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          Expertly curated tours across Dubai, Southeast Asia, and the Middle
-          East. Your dream trip, planned to perfection.
+          Expertly curated domestic & international tours. Kerala, Kashmir,
+          Dubai, Maldives & more — with discounted air tickets.
         </motion.p>
 
         <motion.div

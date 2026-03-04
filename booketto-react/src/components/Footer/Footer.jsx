@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className={styles.brand}>
           <a href="#" className={styles.logo}>
-            <img src="/logo.png" alt="Booketto" className={styles.logoImg} />
+            <img src="/logo.png" alt="Pan Asia Tours and Travels" className={styles.logoImg} />
           </a>
           <p className={styles.brandDesc}>{company.description}</p>
           <div className={styles.socials}>

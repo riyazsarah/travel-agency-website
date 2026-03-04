@@ -47,7 +47,7 @@ export default function Nav({ onLoginClick }) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <img src="/logo.png" alt="Booketto" className={styles.logoImg} />
+          <img src="/logo.png" alt="Pan Asia Tours and Travels" className={styles.logoImg} />
         </a>
 
         <ul className={styles.links}>
