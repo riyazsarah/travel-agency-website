@@ -17,7 +17,7 @@ export const destinations = [
     category: 'mountain',
     region: 'domestic',
     description: 'Dal Lake shikaras, Gulmarg skiing, Pahalgam valleys & saffron fields.',
-    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=600&auto=format&fit=crop&q=80',
     featured: true,
   },
   {
@@ -119,6 +119,16 @@ export const destinations = [
     region: 'international',
     description: 'Flame Towers, Caspian waterfront, Old City walls & Azerbaijani cuisine.',
     image: 'https://images.unsplash.com/photo-1744704015980-9842c2314c43?w=600&auto=format&fit=crop&q=80',
+    featured: false,
+  },
+  {
+    id: 'srilanka',
+    name: 'Sri Lanka',
+    tag: 'Adventure',
+    category: 'nature',
+    region: 'international',
+    description: 'Sigiriya rock fortress, Ella train rides, whale watching & golden temples.',
+    image: 'https://images.unsplash.com/photo-1586523969764-038cd3f6a40e?w=600&auto=format&fit=crop&q=80',
     featured: false,
   },
 ];

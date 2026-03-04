@@ -1,16 +1,72 @@
-# React + Vite
+# Pan Asia Tours & Travels
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern travel agency website for **Pan Asia Tours and Travels Pvt Ltd** — an IATA-certified travel partner offering curated domestic and international tour packages.
 
-Currently, two official plugins are available:
+Live at: **https://panasia.udyami.ai**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- **React 19** + **Vite** — fast dev/build tooling
+- **GSAP** + **Framer Motion** — parallax scrolling, scroll-triggered reveals, Ken Burns video transitions
+- **CSS Modules** — scoped component styles with CSS custom properties
+- **Nginx Alpine** — production static serving with SPA routing
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Hero section with crossfading drone videos (Kashmir & Kerala) and Ken Burns zoom/pan
+- 13 destination cards with filterable grid (Domestic / International)
+- 6 curated travel packages with pricing
+- Animated stats counters, scroll-reveal animations
+- Fully responsive — mobile-first with touch-optimised video autoplay
+- WhatsApp floating CTA for instant enquiries
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+```
+src/
+├── components/       # React components (Hero, Nav, Destinations, Packages, etc.)
+├── data/             # Static data (destinations, packages)
+├── styles/           # Global CSS variables and resets
+└── utils/            # Helper utilities
+public/
+├── kerala-heritage.mp4   # Optimised local hero video (3.3MB, no audio)
+├── logo.png              # Pan Asia brand logo
+├── robots.txt
+└── sitemap.xml
+scripts/
+└── deploy.sh         # One-command build + Docker + k3d deploy
+```
+
+## Development
+
+```bash
+npm install
+npm run dev           # http://localhost:5173
+```
+
+## Production Build
+
+```bash
+npm run build         # outputs to dist/
+```
+
+## Deployment (k3s)
+
+Deploys to a k3d cluster with Cloudflare Tunnel:
+
+```bash
+bash scripts/deploy.sh
+```
+
+This script:
+1. Installs dependencies and builds the Vite production bundle
+2. Builds a Docker image (`nginx:alpine` + `dist/`)
+3. Imports the image into the k3d cluster
+4. Applies Kubernetes manifests (Deployment, Service, Ingress)
+5. Restarts the rollout and verifies the pod is running
+
+**Infrastructure:**
+- **Cluster:** k3d (`mac-mini-lab`)
+- **Ingress:** Traefik
+- **Tunnel:** Cloudflare Tunnel → `panasia.udyami.ai`
+- **Namespace:** `personal`

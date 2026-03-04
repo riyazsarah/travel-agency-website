@@ -4,14 +4,14 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, #8a9aaa 28%, #1C2B3A 38%, #1C2B3A 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.3s var(--ease-out);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(27, 45, 69, 0.08);
+  transition: background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
 .scrolled {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 18%, #8a9aaa 28%, #1B2738 38%, #1B2738 100%);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  box-shadow: 0 2px 16px rgba(27, 45, 69, 0.08);
 }
 
 .inner {
@@ -21,7 +21,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
-  height: 72px;
+  height: 88px;
 }
 
 /* Logo */
@@ -33,7 +33,7 @@
 }
 
 .logoImg {
-  height: 80px;
+  height: 120px;
   width: auto;
   object-fit: contain;
 }
@@ -52,7 +52,7 @@
   font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--brand-navy);
   text-decoration: none;
   transition: color 0.2s ease;
   position: relative;
@@ -66,13 +66,13 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-blue);
+  background: var(--brand-gold);
   border-radius: 1px;
   transition: width 0.25s var(--ease-out);
 }
 
 .link:hover {
-  color: #fff;
+  color: var(--brand-gold-dark);
 }
 
 .link:hover::after {
@@ -106,7 +106,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: #fff;
+  background: var(--brand-navy);
   border-radius: 2px;
   transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
   transform-origin: center;
@@ -127,8 +127,8 @@
 /* Mobile menu */
 .mobileMenu {
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: #1C2B3A;
+  border-top: 1px solid rgba(27, 45, 69, 0.08);
+  background: #ffffff;
 }
 
 .mobileLinks {
@@ -145,15 +145,15 @@
   font-family: var(--font-body);
   font-size: 1.08rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--brand-navy);
   text-decoration: none;
   padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(27, 45, 69, 0.06);
   transition: color 0.2s ease;
 }
 
 .mobileLink:hover {
-  color: #fff;
+  color: var(--brand-gold-dark);
 }
 
 .mobileActions {

@@ -9,9 +9,11 @@ import styles from './Hero.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const HERO_VIDEOS = [
-  'https://assets.mixkit.co/videos/28602/28602-720.mp4',
-  'https://assets.mixkit.co/videos/20109/20109-720.mp4',
-  'https://assets.mixkit.co/videos/20211/20211-720.mp4',
+  'https://videos.pexels.com/video-files/10760752/10760752-hd_1280_720_24fps.mp4', // Kashmir — Gulmarg snow drone aerial
+  '/kerala-heritage.mp4',                                                           // Kerala — heritage houseboat (local, optimised)
+  'https://videos.pexels.com/video-files/35097635/14868724_1280_720_25fps.mp4',    // Kerala — houseboat cruise on backwaters
+  'https://assets.mixkit.co/videos/15919/15919-720.mp4',                           // Kashmir — aerial valley & snowy mountains
+  'https://assets.mixkit.co/videos/49334/49334-720.mp4',                           // Kerala — drone over jungle river
 ];
 
 const HERO_BG =
@@ -68,14 +70,35 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  /* Ensure videos play on mobile (autoplay can be blocked) */
+  /* Ensure videos play on mobile — retry on every active change + first interaction */
   useEffect(() => {
-    videoRefs.current.forEach((video) => {
+    const playActive = () => {
+      const video = videoRefs.current[activeVideo];
       if (video) {
         video.play().catch(() => {});
       }
-    });
-  }, []);
+    };
+    playActive();
+
+    // Some mobile browsers only allow play after first user gesture
+    const onInteraction = () => {
+      videoRefs.current.forEach((v) => {
+        if (v) v.play().catch(() => {});
+      });
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
+      window.removeEventListener('click', onInteraction);
+    };
+    window.addEventListener('touchstart', onInteraction, { once: true, passive: true });
+    window.addEventListener('scroll', onInteraction, { once: true, passive: true });
+    window.addEventListener('click', onInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
+      window.removeEventListener('click', onInteraction);
+    };
+  }, [activeVideo]);
 
   /* Video crossfade rotation */
   useEffect(() => {

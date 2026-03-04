@@ -35,12 +35,41 @@
   object-fit: cover;
   filter: brightness(0.38);
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  transform: scale(1);
 }
 
 .bgVideoActive {
   opacity: 1;
+  animation: kenBurnsA 8s ease-in-out forwards;
 }
+
+/* Subtle Ken Burns zoom/pan — alternating directions per scene */
+@keyframes kenBurnsA {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.06) translate(-0.5%, -0.3%); }
+}
+
+@keyframes kenBurnsB {
+  0% { transform: scale(1.04) translate(-0.3%, 0); }
+  100% { transform: scale(1) translate(0.3%, -0.2%); }
+}
+
+@keyframes kenBurnsC {
+  0% { transform: scale(1) translate(0.2%, 0.2%); }
+  100% { transform: scale(1.05) translate(-0.3%, 0.1%); }
+}
+
+@keyframes kenBurnsD {
+  0% { transform: scale(1.05) translate(0, -0.3%); }
+  100% { transform: scale(1) translate(0, 0.2%); }
+}
+
+.bgVideoActive:nth-child(1) { animation-name: kenBurnsA; }
+.bgVideoActive:nth-child(2) { animation-name: kenBurnsB; }
+.bgVideoActive:nth-child(3) { animation-name: kenBurnsC; }
+.bgVideoActive:nth-child(4) { animation-name: kenBurnsD; }
+.bgVideoActive:nth-child(5) { animation-name: kenBurnsA; }
 
 /* ── Gradient overlay ── */
 .gradient {
@@ -107,6 +136,7 @@
   text-align: center;
   max-width: 860px;
   padding: 0 1.5rem;
+  padding-top: 88px;
   padding-bottom: 8rem;
   will-change: transform;
 }
@@ -292,6 +322,7 @@
   }
 
   .content {
+    padding-top: 80px;
     padding-bottom: 6.5rem;
   }
 

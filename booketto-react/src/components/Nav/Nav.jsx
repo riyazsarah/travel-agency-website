@@ -65,7 +65,7 @@ export default function Nav({ onLoginClick }) {
         </ul>
 
         <div className={styles.actions}>
-          <Button variant="ghostLight" size="sm" onClick={onLoginClick}>
+          <Button variant="ghost" size="sm" onClick={onLoginClick}>
             Login
           </Button>
           <Button variant="primary" size="sm" onClick={handleGetQuote}>
@@ -109,7 +109,7 @@ export default function Nav({ onLoginClick }) {
             </ul>
             <div className={styles.mobileActions}>
               <Button
-                variant="ghostLight"
+                variant="ghost"
                 size="md"
                 onClick={() => {
                   setMobileOpen(false);

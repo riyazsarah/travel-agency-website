@@ -15,7 +15,7 @@ export const packages = [
     id: 'kashmir-valley',
     title: 'Kashmir Valley Explorer',
     description: 'Dal Lake shikara ride, Gulmarg gondola, Pahalgam meadows & Sonamarg glacier — paradise on earth.',
-    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1669378539802-defdc9409e07?w=700&auto=format&fit=crop&q=80',
     nights: 6,
     persons: 2,
     rating: 4.8,
