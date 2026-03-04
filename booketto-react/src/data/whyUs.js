@@ -2,20 +2,20 @@ export const whyUsFeatures = [
   {
     id: 1,
     icon: 'compass',
-    title: 'Expert Local Knowledge',
-    description: 'Our on-ground teams in every destination ensure you get authentic, insider experiences that generic tour operators miss.',
+    title: 'Pan India Expertise',
+    description: 'Local teams across India — from Kerala backwaters to Kashmir valleys — ensuring authentic, insider experiences at every destination.',
   },
   {
     id: 2,
     icon: 'zap',
-    title: 'Seamless Booking',
-    description: 'Book your entire trip in minutes — flights, hotels, activities and transfers all coordinated in one stress-free package.',
+    title: 'Discounted Air Tickets',
+    description: 'IATA-certified ticketing with access to exclusive airline fares. Domestic and international flights at the best rates guaranteed.',
   },
   {
     id: 3,
     icon: 'shield',
-    title: 'Fully Licensed DMC',
-    description: 'Licensed under UAE Tourism regulations, offering full financial protection and complete peace of mind on every journey.',
+    title: 'IATA Certified Agency',
+    description: 'Fully accredited by IATA, offering secure booking, financial protection and complete peace of mind on every journey.',
   },
   {
     id: 4,
@@ -26,8 +26,8 @@ export const whyUsFeatures = [
   {
     id: 5,
     icon: 'gem',
-    title: 'Exclusive Deals',
-    description: 'As a registered DMC, we negotiate directly with hotels and attractions — passing the absolute best rates to you.',
+    title: 'Best Price Guarantee',
+    description: 'Direct partnerships with hotels and airlines across India and abroad — we pass the absolute best rates to you.',
   },
   {
     id: 6,
