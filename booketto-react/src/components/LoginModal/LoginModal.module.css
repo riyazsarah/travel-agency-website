@@ -1,0 +1,137 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 43, 58, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 24px;
+  padding: 38px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Close ── */
+.close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+/* ── Title ── */
+.title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 22px;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tabActive {
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.input {
+  background: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: border-color 0.25s ease;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+}
+
+.input::placeholder {
+  color: #a3b1bd;
+}
+
+.submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #D4A828, #B8920A);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  margin-top: 4px;
+}
+
+.submit:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}

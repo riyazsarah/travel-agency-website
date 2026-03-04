@@ -1,0 +1,38 @@
+.header {
+  margin-bottom: 48px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.9rem);
+  color: var(--color-text);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.subtitle {
+  color: var(--color-muted);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  max-width: 520px;
+}
