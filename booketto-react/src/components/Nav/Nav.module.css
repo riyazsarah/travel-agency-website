@@ -4,13 +4,13 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: #1C2B3A;
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 35%, #1C2B3A 65%, #1C2B3A 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background 0.3s var(--ease-out);
 }
 
 .scrolled {
-  background: #1B2738;
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 35%, #1B2738 65%, #1B2738 100%);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
 }
 
