@@ -21,7 +21,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
-  height: 72px;
+  height: 100px;
 }
 
 /* Logo */
@@ -33,8 +33,9 @@
 }
 
 .logoImg {
-  height: 28px;
+  height: 120px;
   width: auto;
+  object-fit: contain;
 }
 
 /* Desktop links */
@@ -181,6 +182,6 @@
   }
 
   .inner {
-    height: 64px;
+    height: 80px;
   }
 }
