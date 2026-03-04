@@ -4,13 +4,13 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 35%, #1C2B3A 65%, #1C2B3A 100%);
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 30%, #1C2B3A 42%, #1C2B3A 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background 0.3s var(--ease-out);
 }
 
 .scrolled {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 35%, #1B2738 65%, #1B2738 100%);
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 30%, #1B2738 42%, #1B2738 100%);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -21,7 +21,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
-  height: 100px;
+  height: 110px;
 }
 
 /* Logo */
@@ -33,7 +33,7 @@
 }
 
 .logoImg {
-  height: 120px;
+  height: 160px;
   width: auto;
   object-fit: contain;
 }
