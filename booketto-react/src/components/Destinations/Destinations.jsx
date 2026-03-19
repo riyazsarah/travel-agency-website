@@ -6,11 +6,18 @@ import ScrollReveal from '../ui/ScrollReveal';
 import DestinationCard from './DestinationCard';
 import { cn } from '../../utils/cn';
 
-const COLLAPSED_COUNT = 8;
+const TABS = [
+  { key: 'all', label: 'All' },
+  { key: 'domestic', label: 'Domestic India' },
+  { key: 'international', label: 'International' },
+];
 
 export default function Destinations() {
-  const [collapsed, setCollapsed] = useState(false);
-  const visible = collapsed ? destinations.slice(0, COLLAPSED_COUNT) : destinations;
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filtered = activeTab === 'all'
+    ? destinations
+    : destinations.filter((d) => d.region === activeTab);
 
   return (
     <section className={styles.section} id="destinations">
@@ -19,7 +26,7 @@ export default function Destinations() {
           <SectionHeader
             label="Where to Go"
             title="All Destinations"
-            subtitle="Handpicked destinations across the Middle East, Asia & beyond"
+            subtitle="Handpicked domestic & international destinations for every traveller"
           />
           <a className={styles.bookLink} href="#search">
             Book Any Destination &rarr;
@@ -27,26 +34,29 @@ export default function Destinations() {
         </div>
       </ScrollReveal>
 
+      <div className={styles.tabs}>
+        {TABS.map((tab) => (
+          <button
+            key={tab.key}
+            className={cn(styles.tab, activeTab === tab.key && styles.tabActive)}
+            onClick={() => setActiveTab(tab.key)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
       <div className={styles.grid}>
-        {visible.map((dest, index) => (
+        {filtered.map((dest, index) => (
           <ScrollReveal
             key={dest.id}
             delay={index * 0.03}
-            className={cn(!collapsed && dest.featured && styles.spanTwo)}
+            className={cn(dest.featured && styles.spanTwo)}
             style={{ height: '100%' }}
           >
             <DestinationCard destination={dest} index={index} />
           </ScrollReveal>
         ))}
-      </div>
-
-      <div className={styles.toggleRow}>
-        <button
-          className={styles.toggleBtn}
-          onClick={() => setCollapsed((prev) => !prev)}
-        >
-          {collapsed ? `View All ${destinations.length} Destinations` : 'Show Less'}
-        </button>
       </div>
     </section>
   );

@@ -85,7 +85,7 @@ else
   exit 1
 fi
 
-HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Host: booketto.udyami.ai" http://localhost/ --max-time 10 || echo "000")
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Host: panasia.udyami.ai" http://localhost/ --max-time 10 || echo "000")
 if [ "$HTTP_CODE" = "200" ]; then
   ok "Site responding with HTTP 200"
 else
@@ -93,4 +93,4 @@ else
 fi
 
 echo ""
-ok "Deployment complete! Site: https://booketto.udyami.ai"
+ok "Deployment complete! Site: https://panasia.udyami.ai"

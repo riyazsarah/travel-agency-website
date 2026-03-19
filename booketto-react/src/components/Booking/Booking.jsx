@@ -5,8 +5,8 @@ import ScrollReveal from '../ui/ScrollReveal';
 import { motion } from 'motion/react';
 
 const destinationOptions = [
-  'Dubai', 'Abu Dhabi', 'Malaysia', 'Singapore', 'Thailand',
-  'Oman', 'India', 'Vietnam', 'Turkey', 'Indonesia', 'Baku', 'Saudi Arabia',
+  'Kerala', 'Kashmir', 'Andaman & Nicobar', 'Goa', 'Rajasthan', 'Himachal Pradesh',
+  'Dubai', 'Maldives', 'Mauritius', 'Thailand', 'Singapore', 'Baku',
 ];
 
 const contacts = [
@@ -18,8 +18,8 @@ const contacts = [
     ),
     color: '#10B981',
     label: 'WhatsApp',
-    value: '+91 77700 60200',
-    href: 'https://wa.me/917770060200',
+    value: '+91 00000 00000',
+    href: 'https://wa.me/910000000000',
   },
   {
     icon: (
@@ -30,8 +30,8 @@ const contacts = [
     ),
     color: '#D4A828',
     label: 'Email Us',
-    value: 'info@booketto.in',
-    href: 'mailto:info@booketto.in',
+    value: 'info@panasiatours.in',
+    href: 'mailto:info@panasiatours.in',
   },
   {
     icon: (
@@ -40,9 +40,9 @@ const contacts = [
       </svg>
     ),
     color: '#D4A828',
-    label: 'Dubai Office',
-    value: '+971 54 746 0786',
-    href: 'tel:+971547460786',
+    label: 'Call Us',
+    value: '+91 00000 00000',
+    href: 'tel:+910000000000',
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Booking() {
         <ScrollReveal direction="left">
           <div className={styles.info}>
             <SectionHeader label="Book Your Trip" />
-            <h2 className={styles.heading}>Plan Your Dream Trip with Booketto</h2>
+            <h2 className={styles.heading}>Plan Your Dream Trip with Pan Asia</h2>
             <p className={styles.desc}>
               Share your travel wishlist and our experts will craft a personalised
               itinerary with the best deals. Free consultation, no hidden charges.

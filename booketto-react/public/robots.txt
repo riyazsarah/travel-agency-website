@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://booketto.udyami.ai/sitemap.xml
+Sitemap: https://panasiatours.in/sitemap.xml

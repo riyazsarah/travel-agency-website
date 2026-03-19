@@ -3,13 +3,13 @@ import { searchTags } from '../../data/company';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const destinationOptions = [
-  'Dubai', 'Abu Dhabi', 'Malaysia', 'Singapore', 'Thailand',
-  'Oman', 'India', 'Vietnam', 'Turkey', 'Indonesia', 'Baku', 'Saudi Arabia',
+  'Kerala', 'Kashmir', 'Andaman & Nicobar', 'Goa', 'Rajasthan', 'Himachal Pradesh',
+  'Dubai', 'Maldives', 'Mauritius', 'Thailand', 'Singapore', 'Baku',
 ];
 
 const tripTypes = [
-  'Holiday Package', 'Flight + Hotel', 'Attractions Only',
-  'Airport Transfer', 'Custom Tour',
+  'Holiday Package', 'Flight + Hotel', 'Air Tickets Only',
+  'Honeymoon Special', 'Custom Tour',
 ];
 
 /* ── Lucide-style SVG icons ── */

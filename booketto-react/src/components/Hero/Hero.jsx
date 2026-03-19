@@ -9,13 +9,15 @@ import styles from './Hero.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const HERO_VIDEOS = [
-  'https://assets.mixkit.co/videos/28602/28602-720.mp4',
-  'https://assets.mixkit.co/videos/20109/20109-720.mp4',
-  'https://assets.mixkit.co/videos/20211/20211-720.mp4',
+  'https://videos.pexels.com/video-files/10760752/10760752-hd_1280_720_24fps.mp4', // Kashmir — Gulmarg snow drone aerial
+  '/kerala-heritage.mp4',                                                           // Kerala — heritage houseboat (local, optimised)
+  'https://videos.pexels.com/video-files/35097635/14868724_1280_720_25fps.mp4',    // Kerala — houseboat cruise on backwaters
+  'https://assets.mixkit.co/videos/15919/15919-720.mp4',                           // Kashmir — aerial valley & snowy mountains
+  'https://assets.mixkit.co/videos/49334/49334-720.mp4',                           // Kerala — drone over jungle river
 ];
 
 const HERO_BG =
-  'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&auto=format&fit=crop&q=80';
+  'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&auto=format&fit=crop&q=80';
 
 const HEADLINE_LINE1 = ['Journey', 'Beyond'];
 const HEADLINE_LINE2 = ['the', 'Ordinary'];
@@ -68,14 +70,35 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  /* Ensure videos play on mobile (autoplay can be blocked) */
+  /* Ensure videos play on mobile — retry on every active change + first interaction */
   useEffect(() => {
-    videoRefs.current.forEach((video) => {
+    const playActive = () => {
+      const video = videoRefs.current[activeVideo];
       if (video) {
         video.play().catch(() => {});
       }
-    });
-  }, []);
+    };
+    playActive();
+
+    // Some mobile browsers only allow play after first user gesture
+    const onInteraction = () => {
+      videoRefs.current.forEach((v) => {
+        if (v) v.play().catch(() => {});
+      });
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
+      window.removeEventListener('click', onInteraction);
+    };
+    window.addEventListener('touchstart', onInteraction, { once: true, passive: true });
+    window.addEventListener('scroll', onInteraction, { once: true, passive: true });
+    window.addEventListener('click', onInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('touchstart', onInteraction);
+      window.removeEventListener('scroll', onInteraction);
+      window.removeEventListener('click', onInteraction);
+    };
+  }, [activeVideo]);
 
   /* Video crossfade rotation */
   useEffect(() => {
@@ -92,7 +115,7 @@ export default function Hero() {
       {/* Video background with crossfade */}
       <div ref={bgRef} className={styles.bg}>
         {/* Fallback image for slow connections */}
-        <img src={HERO_BG} alt="Dubai skyline with Burj Khalifa at sunset" className={styles.bgImg} />
+        <img src={HERO_BG} alt="Scenic travel destination" className={styles.bgImg} />
 
         {/* Video layers */}
         {HERO_VIDEOS.map((src, i) => (
@@ -136,7 +159,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Trusted DMC Since 2021
+          Trusted Travel Partner • IATA Certified
         </motion.span>
 
         <motion.h1
@@ -176,8 +199,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          Expertly curated tours across Dubai, Southeast Asia, and the Middle
-          East. Your dream trip, planned to perfection.
+          Expertly curated domestic & international tours. Kerala, Kashmir,
+          Dubai, Maldives & more — with discounted air tickets.
         </motion.p>
 
         <motion.div
